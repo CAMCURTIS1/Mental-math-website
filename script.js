@@ -99,22 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreDisplay.textContent = `Score: ${score} / ${totalAttempts}`;
     }
 
+    function showSection(sectionId) {
+        buttonContainer.style.display = sectionId === 'menu' ? 'flex' : 'none';
+        gameArea.style.display = sectionId === 'game' ? 'block' : 'none';
+        digitSelection.style.display = sectionId === 'digitSelection' ? 'flex' : 'none';
+    }
+
+    function navigateTo(sectionId) {
+        history.pushState({ section: sectionId }, '', `#${sectionId}`);
+        showSection(sectionId);
+    }
+
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.section) {
+            showSection(event.state.section);
+        }
+    });
+
     additionButton.addEventListener('click', () => {
         currentOperation = 'addition';
-        buttonContainer.style.display = 'none';
-        digitSelection.style.display = 'flex';
+        navigateTo('digitSelection');
     });
 
     multiplicationButton.addEventListener('click', () => {
         currentOperation = 'multiplication';
-        buttonContainer.style.display = 'none';
-        digitSelection.style.display = 'flex';
+        navigateTo('digitSelection');
     });
 
     squaringButton.addEventListener('click', () => {
         currentOperation = 'squaring';
-        buttonContainer.style.display = 'none';
-        digitSelection.style.display = 'flex';
+        navigateTo('digitSelection');
     });
 
     checkButton.addEventListener('click', checkAnswer);
@@ -126,18 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backButton.addEventListener('click', () => {
-        gameArea.style.display = 'none';
-        buttonContainer.style.display = 'flex';
+        navigateTo('menu');
     });
 
     digitButtons.forEach(button => {
         button.addEventListener('click', () => {
             numDigits = parseInt(button.getAttribute('data-digits'));
             startGame();
+            navigateTo('game');
         });
     });
 
     answerInput.addEventListener('input', () => {
         answerInput.value = answerInput.value.replace(/[^0-9]/g, '');
     });
+
+    // Initialize the first section based on the URL
+    const initialSection = location.hash ? location.hash.substring(1) : 'menu';
+    showSection(initialSection);
+    history.replaceState({ section: initialSection }, '', `#${initialSection}`);
 });

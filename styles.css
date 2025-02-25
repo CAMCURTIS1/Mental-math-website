@@ -20,7 +20,6 @@ body {
     height: 100vh; /* Full height */
 }
 
-/* Banner styles */
 header.banner {
     background-color: #0a2e86;
     color: white;
@@ -29,7 +28,7 @@ header.banner {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1001;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,8 +42,13 @@ header.banner {
     left: 0px;
 }
 
+.banner a {
+    display: inline-block;
+}
+
 .banner-text {
     flex-grow: 1;
+    text-align: center;
 }
 
 header h1 {
@@ -57,7 +61,6 @@ header p {
     margin: 5px;
 }
 
-/* Digit selection styles */
 .digit-selection {
     text-align: center;
     margin-top: 100px; /* Adjusted margin to move selection lower */
@@ -93,7 +96,10 @@ header p {
     display: flex;
     width: 100vw;
     height: 33.33vw; /* Makes them square based on width */
-    margin-top: 20px; /* Add margin to move buttons lower */
+    position: absolute;
+    top: 103px; /* Adjust this value to match the height of your banner */
+    margin-top: 0; /* Remove the margin-top */
+    justify-content: center; /* Center the buttons horizontally */
 }
 
 .square-button {
@@ -126,7 +132,7 @@ header p {
     margin-right: auto;
     /* Ensure top alignment and centering horizontally */
     position: absolute;
-    top: 80px; /* Adjust this to the height of your fixed banner */
+    top: 105px; /* Adjust this to the height of your fixed banner */
     left: 50%;
     transform: translateX(-50%); /* Centers the container horizontally */
 }

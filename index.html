@@ -9,20 +9,22 @@
 <body>
     <div class="container">
         <header class="banner">
-            <img src="logo.png" alt="Logo" class="banner-logo">
+            <a href="index.html" class="banner-logo">
+                <img src="logo.png" alt="Logo" class="banner-logo">
+            </a>
             <div class="banner-text">
                 <h1>Mental Math Practice</h1>
                 <p>Improve your math skills!</p>
             </div>
         </header>
 
-        <div class="button-container">
+        <div id="menu" class="button-container">
             <button class="square-button" id="addition">Addition</button>
             <button class="square-button" id="multiplication">Multiplication</button>
             <button class="square-button" id="squaring">Squaring</button>
         </div>
 
-        <div class="game">
+        <div id="game" class="game">
             <div id="problem-container">
                 <span id="problem">Loading problem...</span>
             </div>
@@ -33,7 +35,7 @@
             <button id="back-button">Back to Menu</button>
         </div>
 
-        <div class="digit-selection">
+        <div id="digit-selection" class="digit-selection">
             <p>Select number of digits:</p>
             <button class="digit-button" data-digits="1">1 Digit</button>
             <button class="digit-button" data-digits="2">2 Digits</button>
