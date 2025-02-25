@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameArea = document.querySelector('.game');
     const digitSelection = document.querySelector('.digit-selection');
     const digitButtons = document.querySelectorAll('.digit-button');
-    const changeDigitsButton = document.getElementById('change-digits');
 
     let currentOperation = '';
     let currentProblem;
@@ -136,11 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
             numDigits = parseInt(button.getAttribute('data-digits'));
             startGame();
         });
-    });
-
-    changeDigitsButton.addEventListener('click', () => {
-        gameArea.style.display = 'none';
-        digitSelection.style.display = 'flex';
     });
 
     answerInput.addEventListener('input', () => {
