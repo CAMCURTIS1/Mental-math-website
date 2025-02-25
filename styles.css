@@ -1,0 +1,254 @@
+/* Add Outfit font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-top: 80px; /* Ensures space for the fixed header */
+    height: 100vh; /* Full height */
+}
+
+/* Banner styles */
+header.banner {
+    background-color: #0a2e86;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.banner-logo {
+    height: 98px;
+    position: absolute;
+    left: 0px;
+}
+
+.banner-text {
+    flex-grow: 1;
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+header p {
+    font-size: 18px;
+    margin: 5px;
+}
+
+/* Digit selection styles */
+.digit-selection {
+    text-align: center;
+    margin-top: 100px; /* Adjusted margin to move selection lower */
+}
+
+.digit-selection p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.digit-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4463b7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 200px;
+}
+
+.digit-button:hover {
+    background-color: #335a99;
+    transform: scale(1.05);
+}
+
+/* New button styles */
+.button-container {
+    display: flex;
+    width: 100vw;
+    height: 33.33vw; /* Makes them square based on width */
+    margin-top: 20px; /* Add margin to move buttons lower */
+}
+
+.square-button {
+    flex: 1;
+    aspect-ratio: 1/1;
+    background-color: #4463b7;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.square-button:hover {
+    background-color: #335a99;
+}
+
+.game {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Increase font size of the problem */
+#problem-container {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Increase input field size */
+#answer-input {
+    padding: 15px;
+    font-size: 24px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Increase the size of the check answer button */
+#check-answer {
+    padding: 15px;
+    font-size: 20px;
+    background-color: #4463b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+#check-answer:hover {
+    background-color: #4463b7;
+}
+
+#feedback {
+    font-size: 20px; /* Increased font size */
+    margin-top: 15px;
+}
+
+footer {
+    font-size: 12px;
+    color: #777;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#score {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+#back-button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0a2e86;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 5px;
+}
+
+#back-button:hover {
+    background-color: #083a8c;
+}
+
+.game {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px; /* Adjusted max width */
+    margin-left: auto;
+    margin-right: auto;
+    /* Ensure top alignment and centering horizontally */
+    position: absolute;
+    top: 80px; /* Adjust this to the height of your fixed banner */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the container horizontally */
+}
+
+
+/* Hide the digit selection by default */
+.digit-selection {
+    display: none;             /* Hidden by default */
+    position: fixed;           /* Make it an overlay */
+    top: 0;
+    left: 0;
+    width: 100vw;              /* Full viewport width */
+    height: 100vh;             /* Full viewport height */
+    flex-direction: column;    /* Stack items vertically (when shown) */
+    justify-content: flex-start;
+    align-items: center;       /* Center horizontally */
+    background-color: #fafafa;  /* White/light background */
+    padding: 40px;
+    text-align: center;
+    z-index: 1000;             /* Ensure it sits above other content */
+}
+
+.digit-selection p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.digit-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4463b7;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 200px;               /* Fixed width for consistency */
+}
+
+.digit-button:hover {
+    background-color: #335a99;
+    transform: scale(1.05);
+}

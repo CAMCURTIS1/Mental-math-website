@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Math Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="banner">
+            <img src="logo.png" alt="Logo" class="banner-logo">
+            <div class="banner-text">
+                <h1>Mental Math Practice</h1>
+                <p>Improve your math skills!</p>
+            </div>
+        </header>
+
+        <div class="button-container">
+            <button class="square-button" id="addition">Addition</button>
+            <button class="square-button" id="multiplication">Multiplication</button>
+            <button class="square-button" id="squaring">Squaring</button>
+        </div>
+
+        <div class="game">
+            <div id="problem-container">
+                <span id="problem">Loading problem...</span>
+            </div>
+            <input type="number" id="answer-input" placeholder="Your answer" />
+            <button id="check-answer">Check Answer</button>
+            <div id="feedback"></div>
+            <div id="score">Score: 0 / 0</div>
+            <button id="back-button">Back to Menu</button>
+        </div>
+
+        <!-- Add a digit selection container -->
+        <div class="digit-selection">
+            <p>Select number of digits:</p>
+            <button class="digit-button" data-digits="1">1 Digit</button>
+            <button class="digit-button" data-digits="2">2 Digits</button>
+            <button class="digit-button" data-digits="3">3 Digits</button>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Mental Math Practice</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
