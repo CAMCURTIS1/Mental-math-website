@@ -91,17 +91,18 @@ header p {
     transform: scale(1.05);
 }
 
-/* New button styles */
+/* Adjust button-container to use flexbox */
 .button-container {
     display: flex;
+    justify-content: center; /* Center the buttons horizontally */
     width: 100vw;
-    height: 33.33vw; /* Makes them square based on width */
+    height: auto; /* Adjust height to auto */
     position: absolute;
     top: 103px; /* Adjust this value to match the height of your banner */
     margin-top: 0; /* Remove the margin-top */
-    justify-content: center; /* Center the buttons horizontally */
 }
 
+/* Adjust square-button to use percentage-based width */
 .square-button {
     flex: 1;
     aspect-ratio: 1/1;
@@ -116,8 +117,10 @@ header p {
     align-items: center;
     text-align: center;
     border-radius: 10px;
+    margin: 5px; /* Add margin for spacing between buttons */
 }
 
+/* Ensure consistent hover effect */
 .square-button:hover {
     background-color: #335a99;
 }
