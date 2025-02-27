@@ -91,20 +91,18 @@ header p {
     transform: scale(1.05);
 }
 
-/* Updated button container with responsive grid layout */
 .button-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid by default */
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
     gap: 15px;
-    width: 90%;
+    width: 80%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    position: absolute;
+    position: relative;
     top: 120px; /* Adjust based on header height */
 }
 
-/* Style for square buttons */
 .square-button {
     aspect-ratio: 1/1;
     background-color: #4463b7;
@@ -146,6 +144,10 @@ header p {
     
     header p {
         font-size: 16px;
+    }
+
+    .banner-text {
+        margin-left: 0; /* Removes any margin that might have been adding space for the logo */
     }
 }
 
