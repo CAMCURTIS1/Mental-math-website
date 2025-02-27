@@ -91,24 +91,25 @@ header p {
     transform: scale(1.05);
 }
 
-/* Adjust button-container to use flexbox */
+/* Updated button container with responsive grid layout */
 .button-container {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    width: 100vw;
-    height: auto; /* Adjust height to auto */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid by default */
+    gap: 15px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
     position: absolute;
-    top: 103px; /* Adjust this value to match the height of your banner */
-    margin-top: 0; /* Remove the margin-top */
+    top: 120px; /* Adjust based on header height */
 }
 
-/* Adjust square-button to use percentage-based width */
+/* Style for square buttons */
 .square-button {
-    flex: 1;
     aspect-ratio: 1/1;
     background-color: #4463b7;
     color: white;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     border: 2px solid white;
     cursor: pointer;
@@ -117,12 +118,35 @@ header p {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    margin: 5px; /* Add margin for spacing between buttons */
+    padding: 20px;
 }
 
 /* Ensure consistent hover effect */
 .square-button:hover {
     background-color: #335a99;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .button-container {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2x2 on mobile */
+        width: 95%;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .square-button {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 32px;
+    }
+    
+    header p {
+        font-size: 16px;
+    }
 }
 
 .game {
