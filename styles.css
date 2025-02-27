@@ -42,7 +42,7 @@ header.banner {
 }
 
 /* Hide the banner-logo on mobile */
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     .banner-logo {
         display: none;  /* Hides the banner-logo on screens smaller than 768px */
     }
