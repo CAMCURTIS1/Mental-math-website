@@ -99,10 +99,9 @@ header p {
 }
 
 /* Mobile Fix - Ensures 2x2 Grid */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .button-container {
-        width: 90vw;
-        margin-top: 10vh; 
+        width: 90vw; /* Make it more responsive */
     }
 
     .square-button {
@@ -224,9 +223,4 @@ header p {
 
 #back-button:hover {
     background-color: #083a8c;
-}
-
-html, body {
-    scroll-behavior: auto; /* Prevent smooth scrolling on page load */
-    overflow: hidden; /* If content is shifting due to scrollbars */
 }
