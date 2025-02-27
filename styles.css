@@ -106,6 +106,7 @@ header p {
 
     .square-button {
         width: 52%;  /* Ensures 2 buttons per row */
+        font-size: 24px;
     }
 }
 
