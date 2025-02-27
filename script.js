@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const additionButton = document.getElementById('addition');
     const multiplicationButton = document.getElementById('multiplication');
     const squaringButton = document.getElementById('squaring');
-    const divisionButton = document.getElementById('division');
+    const subtractionButton = document.getElementById('subtraction');
     const problemContainer = document.getElementById('problem');
     const answerInput = document.getElementById('answer-input');
     const checkButton = document.getElementById('check-answer');
@@ -58,12 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     newProblem = `${a}²`;
                     currentAnswer = a * a;
                     break;
-                case 'division':
-                    // Create division problems that result in whole numbers
+                case 'subtraction':
+                    a = Math.floor(Math.random() * (max - min + 1)) + min;
                     b = Math.floor(Math.random() * (max - min + 1)) + min;
-                    a = b * Math.floor(Math.random() * 9) + b; // Ensure a is divisible by b
-                    newProblem = `${a} ÷ ${b}`;
-                    currentAnswer = a / b;
+                
+                    // Ensure a is greater than b
+                    if (a <= b) {
+                        [a, b] = [b + Math.floor(Math.random() * (max - min + 1)), a]; // Swap and ensure a is larger
+                    }
+                
+                    newProblem = `${a} - ${b}`;
+                    currentAnswer = a - b;
                     break;
             }
         } while (problemHistory.includes(newProblem));
@@ -108,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showSection(sectionId) {
-        buttonContainer.style.display = sectionId === 'menu' ? 'grid' : 'none';
+        buttonContainer.style.display = sectionId === 'menu' ? 'flex' : 'none';
         gameArea.style.display = sectionId === 'game' ? 'block' : 'none';
         digitSelection.style.display = sectionId === 'digitSelection' ? 'flex' : 'none';
     }
@@ -138,9 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         currentOperation = 'squaring';
         navigateTo('digitSelection');
     });
-    
-    divisionButton.addEventListener('click', () => {
-        currentOperation = 'division';
+
+    subtractionButton.addEventListener('click', () => {
+        currentOperation = 'subtraction';
         navigateTo('digitSelection');
     });
 
