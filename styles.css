@@ -62,16 +62,19 @@ header p {
 
 .button-container {
     display: flex;
-    justify-content: center; 
-    width: 100vw;
-    height: auto; 
+    flex-wrap: wrap;
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;  /* Centers the buttons vertically */
+    width: 35vw;  /* Adjust the container width to a percentage */
+    height: auto;
     position: absolute;
     top: 103px;
-    margin-top: 0;
+    left: 50%;  /* Position the container in the center horizontally */
+    transform: translateX(-50%);  /* Adjust the position to truly center it */
 }
 
 .square-button {
-    flex: 1;
+    flex: 0 0 45%;  /* Each button takes up 45% of the width */
     aspect-ratio: 1/1;
     background-color: #4463b7;
     color: white;
