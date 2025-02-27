@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let problemHistory = [];
     const historyLimit = 5;
 
+    window.onload = function() {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+    };
+
     function startGame() {
         digitSelection.style.display = 'none';
         gameArea.style.display = 'block';
