@@ -13,11 +13,13 @@ body {
     background-color: #f5f5f5;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
-    padding-top: 80px; /* Ensures space for the fixed header */
-    height: 100vh; /* Full height */
+    min-height: 100vh; /* Ensure the body takes full height */
+}
+
+/* Container to take up remaining space */
+.container {
+    flex: 1;
 }
 
 header.banner {
@@ -91,23 +93,27 @@ header p {
     transform: scale(1.05);
 }
 
+/* Adjust button-container to use flexbox */
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
-    gap: 15px;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
-    top: 120px; /* Adjust based on header height */
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    width: 100vw;
+    height: auto; /* Adjust height to auto */
+    position: fixed; /* Fix the position at the top */
+    top: 103px; /* Adjust this value to match the height of your banner */
+    margin-top: 0; /* Remove the margin-top */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+    z-index: 1000; /* Ensure it sits above other content */
 }
 
+/* Adjust square-button to use percentage-based width */
 .square-button {
+    flex: 1 1 25%; /* Flex-grow, flex-shrink, and flex-basis */
+    max-width: 25%; /* Ensure buttons do not exceed 25% of the container width */
     aspect-ratio: 1/1;
     background-color: #4463b7;
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     border: 2px solid white;
     cursor: pointer;
@@ -116,7 +122,7 @@ header p {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    padding: 20px;
+    margin: 5px; /* Add margin for spacing between buttons */
 }
 
 /* Ensure consistent hover effect */
@@ -124,30 +130,13 @@ header p {
     background-color: #335a99;
 }
 
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-    .button-container {
-        grid-template-columns: repeat(2, 1fr); /* Keep 2x2 on mobile */
-        width: 95%;
-        gap: 10px;
-        padding: 10px;
-    }
-    
+/* Media query for mobile devices */
+@media (max-width: 600px) {
     .square-button {
-        font-size: 20px;
-        padding: 15px;
-    }
-    
-    header h1 {
-        font-size: 32px;
-    }
-    
-    header p {
-        font-size: 16px;
-    }
-
-    .banner-text {
-        margin-left: 0; /* Removes any margin that might have been adding space for the logo */
+        font-size: 20px; /* Adjust font size for smaller screens */
+        margin: 2px; /* Reduce margin for smaller screens */
+        flex: 1 1 45%; /* Adjust flex-basis for smaller screens */
+        max-width: 45%; /* Ensure buttons do not exceed 45% of the container width */
     }
 }
 
@@ -207,8 +196,12 @@ header p {
 footer {
     font-size: 12px;
     color: #777;
-    margin-top: 20px;
     text-align: center;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    position: relative; /* Changed to relative */
+    bottom: 0;
 }
 
 #score {
@@ -272,4 +265,29 @@ footer {
 .digit-button:hover {
     background-color: #335a99;
     transform: scale(1.05);
+}
+
+/* Default logo styling (visible) */
+.banner-logo {
+    height: 98px;
+    position: absolute;
+    left: 0px;
+}
+
+/* Hide logo on mobile devices */
+@media (max-width: 768px) {
+    .banner-logo {
+        display: none; /* This hides the logo on mobile */
+    }
+    
+    /* Center the banner text when logo is hidden */
+    .banner-text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Adjust header title size for mobile */
+    header h1 {
+        font-size: 32px; /* Slightly smaller font for mobile */
+    }
 }
