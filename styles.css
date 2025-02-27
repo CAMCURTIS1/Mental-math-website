@@ -71,19 +71,19 @@ header p {
 .button-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;  /* Centers the buttons horizontally */
-    align-items: center;  /* Centers the buttons vertically */
-    width: 40%;  /* Adjust the container width to a percentage */
+    justify-content: center;
+    align-items: center;
+    width: 35vw;  
     height: auto;
     position: absolute;
     top: 103px;
-    left: 50%;  /* Position the container in the center horizontally */
-    transform: translateX(-50%);  /* Adjust the position to truly center it */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .square-button {
-    flex: 0 0 45%;  /* Each button takes up 45% of the width */
-    aspect-ratio: 1/1;
+    width: 45%;  /* Ensures 2 buttons per row */
+    aspect-ratio: 1 / 1;  /* Maintains square shape */
     background-color: #4463b7;
     color: white;
     font-size: 28px;
@@ -95,16 +95,17 @@ header p {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    margin: 5px; 
+    margin: 5px;
 }
 
+/* Mobile Fix - Ensures 2x2 Grid */
 @media (max-width: 600px) {
     .button-container {
-        width: 90%;
-        top: 5vh;
+        width: 90vw; /* Make it more responsive */
     }
+
     .square-button {
-        flex: 0 0 90%;
+        width: 45%;  /* Ensures 2 buttons per row */
     }
 }
 
