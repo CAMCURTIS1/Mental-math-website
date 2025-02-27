@@ -225,3 +225,7 @@ header p {
     background-color: #083a8c;
 }
 
+html, body {
+    scroll-behavior: auto; /* Prevent smooth scrolling on page load */
+    overflow: hidden; /* If content is shifting due to scrollbars */
+}
