@@ -105,7 +105,7 @@ header p {
     }
 
     .square-button {
-        width: 45%;  /* Ensures 2 buttons per row */
+        width: 30%;  /* Ensures 2 buttons per row */
     }
 }
 
