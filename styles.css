@@ -41,6 +41,13 @@ header.banner {
     left: 0px;
 }
 
+/* Hide the banner-logo on mobile */
+@media (max-width: 768px) {
+    .banner-logo {
+        display: none;  /* Hides the banner-logo on screens smaller than 768px */
+    }
+}
+
 .banner a {
     display: inline-block;
 }
