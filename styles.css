@@ -99,7 +99,7 @@ header p {
 }
 
 /* Mobile Fix - Ensures 2x2 Grid */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .button-container {
         width: 90vw; /* Make it more responsive */
     }
