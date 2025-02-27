@@ -1,0 +1,3 @@
+Ideas
+
+- Subtraction - let users choose whether to have commutative friendly nums

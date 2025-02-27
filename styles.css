@@ -98,6 +98,16 @@ header p {
     margin: 5px; 
 }
 
+@media (max-width: 600px) {
+    .button-container {
+        width: 90%;
+        top: 5vh;
+    }
+    .square-button {
+        flex: 0 0 90%;
+    }
+}
+
 .square-button:hover {
     background-color: #335a99;
 }
