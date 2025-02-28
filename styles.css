@@ -105,8 +105,8 @@ header p {
     }
 
     .square-button {
-        width: 50%;  /* Ensures 2 buttons per row */
-        font-size: 20px;
+        width: 45%;  /* Ensures 2 buttons per row */
+        font-size: 24px;
     }
 }
 
